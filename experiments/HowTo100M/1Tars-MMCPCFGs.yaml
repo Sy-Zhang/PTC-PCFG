@@ -1,0 +1,75 @@
+MODEL_DIR: ./checkpoints
+RESULT_DIR: ./results
+LOG_DIR: ./log
+CHECKPOINT: ''
+
+DATASET:
+  DATA_ROOT: data
+  WORD2INT_PATH: HowTo100M/processed-word2int-20k.pkl
+  INT2WORD_PATH: HowTo100M/processed-int2word-20k.pkl
+  MAX_TEXT_LENGTH: 40
+  NUM_OUTPUT_CLIPS: 8
+  EXPERTS: [resnext, senet, i3d, r2p1d, mil-nce, scene, ocr, face]
+  NUM_TARS: 1
+  NUM_INSTANCE: 1
+
+TRAIN:
+  DATASET: HowTo100M
+
+TEST:
+  DATASET: [DiDeMo-Pentathlon, YouCook2-Pentathlon, MSRVTT-Pentathlon]
+
+DATALOADER:
+  WORKERS: 4
+  BATCH_SIZE: 32
+  INFERENCE_BATCH_SIZE: 32
+
+VIDEO_ENCODER:
+  NAME: MultiModalTransformer
+  PARAMS:
+    resnext_dim: 1000
+    senet_dim: 1000
+    i3d_dim: 400
+    r2p1d_dim: 359
+    mil-nce_dim: 512
+    scene_dim: 365
+    ocr_dim: 300
+    face_dim: 512
+    position_embedding: sine
+    nhead: 8
+    normalize_before: False
+    num_encoder_layers: 2
+    normalize: True
+
+SPAN_ENCODER:
+  NAME: LSTM
+  PARAMS:
+    word_dim: 512
+    lstm_dim: 512
+
+MODEL:
+  NAME: MMCPCFGs
+  PARAMS:
+    short_span_ratio: 0.5
+    sem_dim: 512
+    syn_dim: 512
+    vse_mt_alpha: 0.01
+    vse_lm_alpha: 1.0
+    nt_states: 30
+    t_states: 60
+    h_dim: 512
+    w_dim: 512
+    z_dim: 64
+    s_dim: 256
+
+LOSS:
+  NAME: MixedContrastiveLoss
+  PARAMS:
+    margin: 0.2
+
+OPTIM:
+  NAME: Adam
+  LEARNING_RATE: 0.001
+  BETA1: 0.75
+  GRAD_CLIP: 3.0
+  MAX_EPOCH: 1

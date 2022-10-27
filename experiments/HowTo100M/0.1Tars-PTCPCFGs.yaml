@@ -1,0 +1,63 @@
+MODEL_DIR: ./checkpoints
+RESULT_DIR: ./results
+LOG_DIR: ./log
+CHECKPOINT: ''
+
+DATASET:
+  DATA_ROOT: data
+  WORD2INT_PATH: HowTo100M/processed-word2int-20k.pkl
+  INT2WORD_PATH: HowTo100M/processed-int2word-20k.pkl
+  MAX_TEXT_LENGTH: 40
+  NUM_OUTPUT_CLIPS: 8
+  EXPERTS: ['s3dg']
+  NUM_TARS: 0.1
+  NUM_INSTANCE: 1
+
+TRAIN:
+  DATASET: HowTo100M
+
+TEST:
+  DATASET: [DiDeMo-Pentathlon, YouCook2-Pentathlon, MSRVTT-Pentathlon]
+
+DATALOADER:
+  WORKERS: 4
+  BATCH_SIZE: 32
+  INFERENCE_BATCH_SIZE: 32
+
+VIDEO_ENCODER:
+  NAME: S3DGAvgPooling
+  PARAMS:
+    finetune: True
+
+SPAN_ENCODER:
+  NAME: S3DG
+  PARAMS:
+    checkpoint: .cache/howto100m/s3d_howto100m.pth
+    finetune: True
+
+MODEL:
+  NAME: VGCPCFGs
+  PARAMS:
+    short_span_ratio: 0.5
+    sem_dim: 512
+    vse_mt_alpha: 0.01
+    vse_lm_alpha: 1.0
+    nt_states: 30
+    t_states: 60
+    h_dim: 512
+    w_dim: 512
+    z_dim: 64
+    s_dim: 256
+    cap_normalize: False
+
+LOSS:
+  NAME: ContrastiveLoss
+  PARAMS:
+    margin: 0.2
+
+OPTIM:
+  NAME: Adam
+  LEARNING_RATE: 0.001
+  BETA1: 0.75
+  GRAD_CLIP: 3.0
+  MAX_EPOCH: 1
