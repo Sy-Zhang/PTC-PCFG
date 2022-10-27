@@ -5,6 +5,9 @@ text. While [previous work](https://github.com/Sy-Zhang/MMC-PCFG) focuses on bui
 
 [arXiv preprint](https://arxiv.org/pdf/2210.12309.pdf)
 
+## News
+- :sunny: Our paper was accepted by EMNLP 2022.
+
 ## Approach
 
 ![Our framework](figures/framework.png)
