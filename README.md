@@ -1,12 +1,16 @@
 # Learning a Grammar Inducer by Watching Millions of Instructional YouTube Videos
 
+> [**Learning a Grammar Inducer by Watching Millions of Instructional YouTube Videos**](https://arxiv.org/pdf/2210.12309.pdf)<br>
+> accepted by EMNLP 2022 as an oral presentation<br>
+> [Songyang Zhang](https://sy-zhang.github.io/), [Linfeng Song](https://freesunshine0316.github.io/), [Lifeng Jin](https://lifengjin.github.io/), [Haitao Mi](https://scholar.google.com/citations?user=G3OMbFSm858C&hl=tl), [Kun Xu](https://sites.google.com/view/kunxu/home), [Dong Yu](https://sites.google.com/view/dongyu888/) and [Jiebo Luo](https://www.cs.rochester.edu/u/jluo/).
+
 Video-aided grammar induction aims to leverage video information for finding more accurate syntactic grammars for accompanying
 text. While [previous work](https://github.com/Sy-Zhang/MMC-PCFG) focuses on building systems on well-aligned video-text pairs, we train our model only on noisy YouTube videos without finetuning on benchmark data and achieved stronger performances across three benchmarks.
 
-[arXiv preprint](https://arxiv.org/pdf/2210.12309.pdf)
+[[arxiv]](https://arxiv.org/pdf/2210.12309.pdf)
 
 ## News
-- :sunny: Our paper was accepted by EMNLP 2022.
+- :sparkles: **[Oct, 2022]** Our paper has been accepted by EMNLP 2022 (**Oral**).
 
 ## Approach
 
@@ -57,13 +61,8 @@ python tools/compute_gold_trees.py
 python tools/generate_vocabularies.py
 ```
 
-## Acknowledgements
-
-This repo is developed based on [VPCFG](https://github.com/zhaoyanpeng/vpcfg), [MMC-PCFG](https://github.com/Sy-Zhang/MMC-PCFG) and [Punctuator2](https://github.com/ottokart/punctuator2).
-
-
 ## Citation
-If any part of our paper and code is helpful to your work, please generously cite with:
+If this project is useful for you, please consider citing our paper :mega:
 ```
 @inproceedings{zhang2022training,
 title={Learning a Grammar Inducer by Watching Millions of Instructional YouTube Videos},
@@ -71,3 +70,10 @@ author={Zhang, Songyang and Song, Linfeng and Jin, Lifeng and Mi, Haitao and Xu,
 booktitle={EMNLP},
 year={2022}
 ```
+
+## Acknowledgements
+
+This repo is developed based on [VPCFG](https://github.com/zhaoyanpeng/vpcfg), [MMC-PCFG](https://github.com/Sy-Zhang/MMC-PCFG) and [Punctuator2](https://github.com/ottokart/punctuator2).
+
+
+
