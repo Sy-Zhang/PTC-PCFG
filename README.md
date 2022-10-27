@@ -1,7 +1,7 @@
 # Learning a Grammar Inducer by Watching Millions of Instructional YouTube Videos
 
 Video-aided grammar induction aims to leverage video information for finding more accurate syntactic grammars for accompanying
-text. While previous work focuses on building systems on well-aligned video-text pairs, we train our model only on noisy YouTube videos without finetuning on benchmark data and achieved stronger performances across three benchmarks.
+text. While [previous work](https://github.com/Sy-Zhang/MMC-PCFG) focuses on building systems on well-aligned video-text pairs, we train our model only on noisy YouTube videos without finetuning on benchmark data and achieved stronger performances across three benchmarks.
 
 [arXiv preprint](https://arxiv.org/pdf/2210.12309.pdf)
 
