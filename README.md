@@ -26,7 +26,7 @@ We only support Linux with NVIDIA GPUs. We test on Ubuntu 18.04 and V100 cards.
 
 ## Quick Start
 
-# Launch Docker Container
+### Launch Docker Container
 ```bash
 CUDA_VISIBLE_DEVICES=0,1 source launch_container.sh $PATH_TO_STORAGE/data $PATH_TO_STORAGE/checkpoints $PATH_TO_STORAGE/log
 ```
@@ -35,25 +35,25 @@ Note that the source code is mounted into the container under `/src` instead
 of built into the image so that user modification will be reflected without
 re-building the image.
 
-# Data Preparation
+### Data Preparation
 Please download the data from [here](https://www.dropbox.com/sh/flshflx1rdrxh8v/AAAktPEWL1iHde0wU20aVlwGa?dl=0) to `data`, 
  and [here](https://www.dropbox.com/sh/mjha0m8onhkerxm/AADZmVbXWRVwwg9__f6O98sYa?dl=0) to `.cache`.
 Preprocessing details are described [here](#preprocessing-details). 
 
-# Training
+### Training
 
 Run the following commands for training:
 ```bash
 sh scripts/train.sh
 ```
 
-# Evaluation
+### Evaluation
 Our trained model are provided [here](https://www.dropbox.com/sh/jjp48bmr8tj283e/AAArbHSQsZQzbNR_TCKN8QIga?dl=0). Please download them to `checkpoints`.
 Then, run the following commands for evaluation:
 ```bash
 sh scripts/test.sh
 ```
-## Preprocessing details
+### Preprocessing details
 We preprocess subtitles with the following scripts:
 ```bash
 python tools/preprocess_captions.py
