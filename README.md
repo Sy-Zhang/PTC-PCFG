@@ -10,7 +10,8 @@ text. While [previous work](https://github.com/Sy-Zhang/MMC-PCFG) focuses on bui
 [[arxiv]](https://arxiv.org/pdf/2210.12309.pdf)
 
 ## News
-- :sparkles: **[Oct, 2022]** Our paper has been accepted by EMNLP 2022 (**Oral**).
+- **[Oct, 2022]** Talk invited by [UM-IoS EMNLP 2022 Workshop](https://induction-of-structure.github.io/emnlp2022/) :smile:
+- **[Oct, 2022]** Our paper has been accepted by EMNLP 2022 (**Oral**). :sparkles: 
 
 ## Approach
 
