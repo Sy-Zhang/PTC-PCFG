@@ -60,7 +60,7 @@ class HowTo100M(Dataset):
                 video_id, feature_file = l[:-1].split(',')
                 feat_dict[video_id] = feature_file
             return feat_dict
-        csv_dict = load_csv('s3dg')
+        csv_dict = {expert: load_csv(expert) for expert in ['s3dg']}
         video_ids = json.load(open(os.path.join(self.cfg.DATA_ROOT, self.name, "video_ids.json"), 'r'))
 
         for video_id in video_ids:
