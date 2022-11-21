@@ -37,9 +37,10 @@ of built into the image so that user modification will be reflected without
 re-building the image.
 
 ### Data Preparation
-Please download the data from [here](https://www.dropbox.com/sh/flshflx1rdrxh8v/AAAktPEWL1iHde0wU20aVlwGa?dl=0) to `data`, 
+Please download the preprocessed data from [here](https://www.dropbox.com/sh/flshflx1rdrxh8v/AAAktPEWL1iHde0wU20aVlwGa?dl=0) to `data`, 
  and [here](https://www.dropbox.com/sh/mjha0m8onhkerxm/AADZmVbXWRVwwg9__f6O98sYa?dl=0) to `.cache`.
-Preprocessing details are described [here](#preprocessing-details). 
+ 
+ [Optional] You can also preprocess data from raw captions. Details are described [here](#preprocessing-details). 
 
 ### Training
 
