@@ -17,9 +17,8 @@ def generate_howto100m_vocabularies():
     if not os.path.exists(counter_path):
         counter = Counter()
         for vid, item in tqdm(captions.items()):
-            sentences = item['text']
-            for sent in sentences:
-                for word in sent:
+            for sent in item:
+                for word in sent['description']:
                     counter[word] += 1
         pickle.dump(counter, open(os.path.join(data_root, 'counter.pkl'), 'wb'))
 
